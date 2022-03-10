@@ -3,7 +3,17 @@ guid: 41e0b00318d3201468bfc45db664dcc3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkWood.001
+    second: {fileID: 2100000, guid: 301f8b02f3e856d429c2b8393547e1d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.001
+    second: {fileID: 2100000, guid: 60ed96139bf316c439193a6c9c09a538, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

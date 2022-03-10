@@ -3,7 +3,12 @@ guid: 48b025d799bfe1a40a3dbb71cd467876
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightRock.001
+    second: {fileID: 2100000, guid: b9a28772d324aa9468ccabf9567b0693, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
