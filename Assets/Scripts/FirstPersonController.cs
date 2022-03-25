@@ -277,7 +277,6 @@ public class FirstPersonController : MonoBehaviour
         {
             if(hit.collider.gameObject.layer == 9 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
             {
-                Debug.Log("yeah");
                 hit.collider.TryGetComponent<Interactable>(out currentInteractable);
 
                 if(currentInteractable)
