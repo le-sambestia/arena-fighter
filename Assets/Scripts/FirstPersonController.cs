@@ -133,6 +133,8 @@ public class FirstPersonController : MonoBehaviour
 
     private float rotationX = 0;
 
+    public static FirstPersonController instance;
+
     private void OnEnable()
     {
         OnTakeDamage += ApplyDamage;
@@ -143,6 +145,7 @@ public class FirstPersonController : MonoBehaviour
     }
     void Awake()
     {
+        instance = this;
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
         defaultYpos = playerCamera.transform.localPosition.y;
