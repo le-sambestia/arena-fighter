@@ -5,6 +5,7 @@ using System;
 
 public class FirstPersonController : MonoBehaviour
 {
+    public GameObject Player;
     public bool CanMove { get; private set; } = true;
     public bool isSprinting => canSprint && Input.GetKey(sprintKey);
     public bool shouldJump => characterController.isGrounded && Input.GetKeyDown(jumpKey);

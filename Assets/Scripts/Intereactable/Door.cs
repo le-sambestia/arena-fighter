@@ -22,7 +22,7 @@ public class Door : Interactable
         {
             isOpen = !isOpen;
 
-            Vector3 doorTransformDirection = transform.TransformDirection(Vector3.forward);
+            Vector3 doorTransformDirection = -transform.up;
             Vector3 playerTransformDirection = FirstPersonController.instance.transform.position - transform.position;
             float dot = Vector3.Dot(doorTransformDirection, playerTransformDirection);
 
@@ -41,7 +41,7 @@ public class Door : Interactable
     {
         while(isOpen)
         {
-            yield return new WaitForSeconds(3);
+            yield return null;
 
             if (Vector3.Distance(transform.position, FirstPersonController.instance.transform.position) > 3)
             {
