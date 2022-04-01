@@ -411,13 +411,13 @@ public class FirstPersonController : MonoBehaviour
 
         while(currentHealth < maxHealth)
         {
-            currentHealth += healthValueIncrement;
+            currentHealth = Mathf.Lerp(currentHealth, (currentHealth + healthValueIncrement), healthTimeIncrement * Time.deltaTime);
 
             if (currentHealth > maxHealth)
                 currentHealth = maxHealth;
 
             OnHeal?.Invoke(currentHealth);
-            yield return timeToWait;
+            yield return null;
         }
 
         regeneratingHealth = null;
@@ -432,13 +432,13 @@ public class FirstPersonController : MonoBehaviour
             if (currentStamina > 0)
                 canSprint = true;
 
-            currentStamina += staminaValueIncrement;
+            currentStamina =Mathf.Lerp(currentStamina, (currentStamina + staminaValueIncrement), staminaTimeIncrement * Time.deltaTime);
 
             if (currentStamina > maxStamina)
                 currentStamina = maxStamina;
-
+            
             OnStaminaChange?.Invoke(currentStamina);
-            yield return timeToWait;
+            yield return null;
         }
 
         regeneratingStamina = null;

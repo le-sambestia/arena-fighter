@@ -7294,6 +7294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8092b46d4ad10459e272603b63972f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   canSprint: 1
   canJump: 1
   canCrouch: 1
