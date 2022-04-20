@@ -13,14 +13,14 @@ public class UI : MonoBehaviour
 
     private void OnEnable()
     {
-        FirstPersonController.OnDamage += UpdateHealth;
-        FirstPersonController.OnHeal += UpdateHealth;
+        CharacterStats.OnDamage += UpdateHealth;
+        CharacterStats.OnHeal += UpdateHealth;
         FirstPersonController.OnStaminaChange += UpdateStamina;
     }
     private void OnDisable()
     {
-        FirstPersonController.OnDamage -= UpdateHealth;
-        FirstPersonController.OnHeal -= UpdateHealth;
+        CharacterStats.OnDamage -= UpdateHealth;
+        CharacterStats.OnHeal -= UpdateHealth;
         FirstPersonController.OnStaminaChange -= UpdateStamina;
     }
     private void Start()

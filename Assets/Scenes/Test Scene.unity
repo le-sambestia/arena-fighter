@@ -5769,6 +5769,8 @@ GameObject:
   - component: {fileID: 818421145}
   - component: {fileID: 818421146}
   - component: {fileID: 818421147}
+  - component: {fileID: 818421149}
+  - component: {fileID: 818421148}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -5882,6 +5884,38 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &818421148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818421140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101fbb7d72c3f7e42816b23d1f5b2183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage:
+    baseValue: 0
+  armour:
+    baseValue: 0
+  maxHealth: 50
+  timeBeforeRegenStarts: 0
+  healthValueIncrement: 0
+  healthTimeIncrement: 0
+--- !u!114 &818421149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818421140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bbec032ff84fa4e92e1df098813991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &851361156
 GameObject:
   m_ObjectHideFlags: 0
@@ -7380,6 +7414,7 @@ GameObject:
   - component: {fileID: 1488551210}
   - component: {fileID: 1488551209}
   - component: {fileID: 1488551212}
+  - component: {fileID: 1488551213}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -7422,10 +7457,6 @@ MonoBehaviour:
   lookSpeedY: 2
   upperLookLimit: 80
   lowerLookLimit: 80
-  maxHealth: 100
-  timeBeforeRegenStarts: 3
-  healthValueIncrement: 1
-  healthTimeIncrement: 1
   maxStamina: 100
   staminaUseMultiplier: 5
   timeBeforeStaminaRegenStarts: 5
@@ -7590,6 +7621,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1488551213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488551208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16126011156a42c49863c03dd84dcb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage:
+    baseValue: 0
+  armour:
+    baseValue: 0
+  maxHealth: 100
+  timeBeforeRegenStarts: 3
+  healthValueIncrement: 1
+  healthTimeIncrement: 1
 --- !u!1001 &1495521396
 PrefabInstance:
   m_ObjectHideFlags: 0

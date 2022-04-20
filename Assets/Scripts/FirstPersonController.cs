@@ -41,16 +41,16 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField, Range(1, 180)] private float upperLookLimit = 80f;
     [SerializeField, Range(1, 180)] private float lowerLookLimit = 80f;
 
-    [Header("Health")]
-    [SerializeField] private float maxHealth = 100;
-    [SerializeField] private float timeBeforeRegenStarts = 3;
-    [SerializeField] private float healthValueIncrement = 1;
-    [SerializeField] private float healthTimeIncrement = 1;
-    private float currentHealth;
-    private Coroutine regeneratingHealth;
-    public static Action<float> OnTakeDamage;
-    public static Action<float> OnDamage;
-    public static Action<float> OnHeal;
+    //[Header("Health")]
+    //[SerializeField] private float maxHealth = 100;
+    //[SerializeField] private float timeBeforeRegenStarts = 3;
+    //[SerializeField] private float healthValueIncrement = 1;
+    //[SerializeField] private float healthTimeIncrement = 1;
+    //private float currentHealth;
+    //private Coroutine regeneratingHealth;
+    //public static Action<float> OnTakeDamage;
+    //public static Action<float> OnDamage;
+    //public static Action<float> OnHeal;
 
     [Header("Stamina")]
     [SerializeField] private float maxStamina = 100;
@@ -136,14 +136,15 @@ public class FirstPersonController : MonoBehaviour
 
     public static FirstPersonController instance;
 
-    private void OnEnable()
-    {
-        OnTakeDamage += ApplyDamage;
-    }
-    private void OnDisable()
-    {
-        OnTakeDamage -= ApplyDamage;
-    }
+
+    //private void OnEnable()
+    //{
+    //    OnTakeDamage += ApplyDamage;
+    //}
+    //private void OnDisable()
+    //{
+    //    OnTakeDamage -= ApplyDamage;
+    //}
     void Awake()
     {
         instance = this;
@@ -151,7 +152,7 @@ public class FirstPersonController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         defaultYpos = playerCamera.transform.localPosition.y;
         defaultFOV = playerCamera.fieldOfView;
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
         currentStamina = maxStamina;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -228,9 +229,9 @@ public class FirstPersonController : MonoBehaviour
     }
     private void HandleStamina()
     {
-        if(isSprinting && currentInput != Vector2.zero)
+        if (isSprinting && currentInput != Vector2.zero)
         {
-            if(regeneratingStamina != null)
+            if (regeneratingStamina != null)
             {
                 StopCoroutine(regeneratingStamina);
                 regeneratingStamina = null;
@@ -246,7 +247,7 @@ public class FirstPersonController : MonoBehaviour
             if (currentStamina <= 0)
                 canSprint = false;
         }
-        if(!isSprinting && currentStamina < maxStamina && regeneratingStamina == null)
+        if (!isSprinting && currentStamina < maxStamina && regeneratingStamina == null)
         {
             regeneratingStamina = StartCoroutine(RegerateStamina());
         }
@@ -328,27 +329,27 @@ public class FirstPersonController : MonoBehaviour
             footstepTimer = GetCurrentOffset;
         }
     }
-    private void ApplyDamage(float dmg)
-    {
-        currentHealth -= dmg;
-        OnDamage?.Invoke(currentHealth);
+    //private void ApplyDamage(float dmg)
+    //{
+    //    currentHealth -= dmg;
+    //    OnDamage?.Invoke(currentHealth);
 
-        if (currentHealth <= 0)
-            KillPlayer();
-        else if (regeneratingHealth != null)
-            StopCoroutine(regeneratingHealth);
+    //    if (currentHealth <= 0)
+    //        KillPlayer();
+    //    else if (regeneratingHealth != null)
+    //        StopCoroutine(regeneratingHealth);
 
-        regeneratingHealth = StartCoroutine(RegenerateHealth());
-    }
-    private void KillPlayer()
-    {
-        currentHealth = 0;
+    //    regeneratingHealth = StartCoroutine(RegenerateHealth());
+    //}
+    //private void KillPlayer()
+    //{
+    //    currentHealth = 0;
 
-        if (regeneratingHealth != null)
-            StopCoroutine(regeneratingHealth);
+    //    if (regeneratingHealth != null)
+    //        StopCoroutine(regeneratingHealth);
 
-        print("Dead");
-    }
+    //    print("Dead");
+    //}
     private void ApplyFinalMovement()
     {
         if (!characterController.isGrounded)
@@ -404,39 +405,39 @@ public class FirstPersonController : MonoBehaviour
         playerCamera.fieldOfView = targetFOV;
         zoomRoutine = null;
     }
-    private IEnumerator RegenerateHealth()
-    {
-        yield return new WaitForSeconds(timeBeforeRegenStarts);
-        WaitForSeconds timeToWait = new WaitForSeconds(healthTimeIncrement);
+    //private IEnumerator RegenerateHealth()
+    //{
+    //    yield return new WaitForSeconds(timeBeforeRegenStarts);
+    //    WaitForSeconds timeToWait = new WaitForSeconds(healthTimeIncrement);
 
-        while(currentHealth < maxHealth)
-        {
-            currentHealth = Mathf.Lerp(currentHealth, (currentHealth + healthValueIncrement), healthTimeIncrement * Time.deltaTime);
+    //    while(currentHealth < maxHealth)
+    //    {
+    //        currentHealth = Mathf.Lerp(currentHealth, (currentHealth + healthValueIncrement), healthTimeIncrement * Time.deltaTime);
 
-            if (currentHealth > maxHealth)
-                currentHealth = maxHealth;
+    //        if (currentHealth > maxHealth)
+    //            currentHealth = maxHealth;
 
-            OnHeal?.Invoke(currentHealth);
-            yield return null;
-        }
+    //        OnHeal?.Invoke(currentHealth);
+    //        yield return null;
+    //    }
 
-        regeneratingHealth = null;
-    }
+    //    regeneratingHealth = null;
+    //}
     private IEnumerator RegerateStamina()
     {
         yield return new WaitForSeconds(timeBeforeStaminaRegenStarts);
         WaitForSeconds timeToWait = new WaitForSeconds(staminaTimeIncrement);
 
-        while(currentStamina < maxStamina)
+        while (currentStamina < maxStamina)
         {
             if (currentStamina > 0)
                 canSprint = true;
 
-            currentStamina =Mathf.Lerp(currentStamina, (currentStamina + staminaValueIncrement), staminaTimeIncrement * Time.deltaTime);
+            currentStamina = Mathf.Lerp(currentStamina, (currentStamina + staminaValueIncrement), staminaTimeIncrement * Time.deltaTime);
 
             if (currentStamina > maxStamina)
                 currentStamina = maxStamina;
-            
+
             OnStaminaChange?.Invoke(currentStamina);
             yield return null;
         }
