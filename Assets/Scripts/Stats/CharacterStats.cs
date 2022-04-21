@@ -9,7 +9,7 @@ public class CharacterStats : MonoBehaviour
     public Stat armour;
 
     [Header("Health")]
-    [SerializeField] private float maxHealth = 100;
+    [SerializeField] private float maxHP = 100;
     [SerializeField] private float timeBeforeRegenStarts = 3;
     [SerializeField] private float healthValueIncrement = 1;
     [SerializeField] private float healthTimeIncrement = 1;
@@ -29,7 +29,7 @@ public class CharacterStats : MonoBehaviour
     }
     void Awake()
     {
-        currentHealth = maxHealth;
+        currentHealth = maxHP;
     }
     //private void HandleStamina()
     //{
@@ -64,7 +64,7 @@ public class CharacterStats : MonoBehaviour
             ApplyDamage(10);
         }
     }
-    private void ApplyDamage(float dmg)
+    public void ApplyDamage(float dmg)
     {
         dmg -= armour.GetValue();
         dmg = Mathf.Clamp(dmg, 0, int.MaxValue);
@@ -93,12 +93,12 @@ public class CharacterStats : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeRegenStarts);
         WaitForSeconds timeToWait = new WaitForSeconds(healthTimeIncrement);
 
-        while (currentHealth < maxHealth)
+        while (currentHealth < maxHP)
         {
             currentHealth = Mathf.Lerp(currentHealth, (currentHealth + healthValueIncrement), healthTimeIncrement * Time.deltaTime);
 
-            if (currentHealth > maxHealth)
-                currentHealth = maxHealth;
+            if (currentHealth > maxHP)
+                currentHealth = maxHP;
 
             OnHeal?.Invoke(currentHealth);
             yield return null;
