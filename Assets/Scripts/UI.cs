@@ -13,15 +13,10 @@ public class UI : MonoBehaviour
 
     private void OnEnable()
     {
-        CharacterStats.OnDamage += UpdateHealth;
-        CharacterStats.OnHeal += UpdateHealth;
+        var playerStats = FirstPersonController.instance.GetComponent<CharacterStats>();
+        playerStats.OnDamage += UpdateHealth;
+        playerStats.OnHeal += UpdateHealth;
         FirstPersonController.OnStaminaChange += UpdateStamina;
-    }
-    private void OnDisable()
-    {
-        CharacterStats.OnDamage -= UpdateHealth;
-        CharacterStats.OnHeal -= UpdateHealth;
-        FirstPersonController.OnStaminaChange -= UpdateStamina;
     }
     private void Start()
     {

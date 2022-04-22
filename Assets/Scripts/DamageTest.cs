@@ -7,6 +7,6 @@ public class DamageTest : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            CharacterStats.OnTakeDamage(15);
+            FirstPersonController.instance.GetComponent<CharacterStats>().OnTakeDamage(15);
     }
 }

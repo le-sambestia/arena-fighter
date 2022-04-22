@@ -5440,11 +5440,9 @@ GameObject:
   - component: {fileID: 818421141}
   - component: {fileID: 818421145}
   - component: {fileID: 818421147}
-  - component: {fileID: 818421149}
   - component: {fileID: 818421148}
   - component: {fileID: 818421150}
-  - component: {fileID: 818421146}
-  - component: {fileID: 818421151}
+  - component: {fileID: 818421149}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -5532,18 +5530,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
---- !u!114 &818421146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818421140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 961761f736e43694fa586bdf692841c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &818421147
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5600,18 +5586,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ade5be9c8408d147aa51666335b7778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &818421151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818421140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2bbec032ff84fa4e92e1df098813991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &851361156
@@ -7497,7 +7471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage:
-    baseValue: 0
+    baseValue: 10
   armour:
     baseValue: 0
   maxHP: 100

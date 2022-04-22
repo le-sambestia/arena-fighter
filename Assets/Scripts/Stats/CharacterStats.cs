@@ -15,9 +15,9 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] private float healthTimeIncrement = 1;
     public float currentHealth { get; private set; }
     private Coroutine regeneratingHealth;
-    public static Action<float> OnTakeDamage;
-    public static Action<float> OnDamage;
-    public static Action<float> OnHeal;
+    public Action<float> OnTakeDamage;
+    public Action<float> OnDamage;
+    public Action<float> OnHeal;
 
     private void OnEnable()
     {
