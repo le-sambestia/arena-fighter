@@ -5558,6 +5558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage:
     baseValue: 10
+  attackSpeed:
+    baseValue: 1
   armour:
     baseValue: 0
   maxHP: 100
@@ -7472,6 +7474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage:
     baseValue: 10
+  attackSpeed:
+    baseValue: 1
   armour:
     baseValue: 0
   maxHP: 100

@@ -6,6 +6,7 @@ using System;
 public class CharacterStats : MonoBehaviour
 {
     public Stat damage;
+    public Stat attackSpeed;
     public Stat armour;
 
     [Header("Health")]
@@ -86,7 +87,7 @@ public class CharacterStats : MonoBehaviour
         if (regeneratingHealth != null)
             StopCoroutine(regeneratingHealth);
 
-        print(transform.name + "Died");
+        FirstPersonController.instance.KillPlayer();
     }
     private IEnumerator RegenerateHealth()
     {
