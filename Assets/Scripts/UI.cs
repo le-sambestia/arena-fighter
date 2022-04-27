@@ -24,7 +24,7 @@ public class UI : MonoBehaviour
         UpdateStamina(100);
     }
     private void UpdateHealth(float currentHealth)
-    {
+    { 
         healthSlider.value = currentHealth;
         healthText.text = currentHealth.ToString("00");
     }

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b284a63a712541e4cbbd800580b5692c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ringbearer
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b0bb936a1de7b2e4282fc2d177252012, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
