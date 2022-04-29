@@ -7073,6 +7073,7 @@ GameObject:
   - component: {fileID: 1251151051}
   - component: {fileID: 1251151053}
   - component: {fileID: 1251151052}
+  - component: {fileID: 1251151054}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -7137,6 +7138,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251151050}
   m_CullTransparentMesh: 1
+--- !u!111 &1251151054
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251151050}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 28b3a2fec59956f41b7673c62281c6a8, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 28b3a2fec59956f41b7673c62281c6a8, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1268738085
 GameObject:
   m_ObjectHideFlags: 0
@@ -7519,6 +7536,7 @@ GameObject:
   - component: {fileID: 1314968582}
   - component: {fileID: 1314968581}
   - component: {fileID: 1314968580}
+  - component: {fileID: 1314968584}
   m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -7608,6 +7626,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!111 &1314968584
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314968579}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1413597509
 PrefabInstance:
   m_ObjectHideFlags: 0
