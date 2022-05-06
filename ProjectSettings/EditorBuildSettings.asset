@@ -4,5 +4,80 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: b3412edb3a7c88d4f9baa97433e8420b
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena1.unity
+    guid: 56d559ac1e46cfa47870035c1fa2611c
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena2.unity
+    guid: f4f2eef762ca4ed4f8e285f679c8544e
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena3.unity
+    guid: 5169af26b8c00c5448799eec6f26d456
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena4.unity
+    guid: ce8af24ed50463d478f01cd3d5c38ecf
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena5.unity
+    guid: 432df067346a21f4bbf4219908098252
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena6.unity
+    guid: 6f863ac3767bad14e98e3575496ab3c7
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena7.unity
+    guid: 87559d9d2c8051d4e85b3ed57b7b39c8
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena8.unity
+    guid: 145dd25b5277855479ff9f358a482d91
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena9.unity
+    guid: a2db335b92f1db747a2aa95d436d6a18
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena10.unity
+    guid: a60a535a22440db4096d4f616ff6803b
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena11.unity
+    guid: 782a4e042ab03f14c99a3b56eb544fb8
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena12.unity
+    guid: b18f5567ea95cd548a910a7c7e920d78
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena13.unity
+    guid: c5a1411ee2f45cd43a51c4a053a81ea6
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena14.unity
+    guid: df07c8e0817f72a40b1366b33d20eef3
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena15.unity
+    guid: 452aa6f6d5d62014593fb6693862a8e0
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena16.unity
+    guid: 001167bf1f33f4340959b5fe282bf93d
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena17.unity
+    guid: 93666adcf41c7f84ba9450e6901063d7
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena18.unity
+    guid: f26b47567da86064fbb0bf0e111cc86f
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena19.unity
+    guid: c57f0ef8b88b73c448abbcb181ce3b5e
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena20.unity
+    guid: 4e1cda86a9864ad489fbe14bc1de4a59
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena21.unity
+    guid: db74caa80510e3045b046db44c9e6391
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena22.unity
+    guid: 562f738e04d073244a413b5bd18ebc6a
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena23.unity
+    guid: 08df9b0d8d130d444a3a45d0e9ca1d9f
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena24.unity
+    guid: b11251fb2c8eb414084536cf3c0d59d7
   m_configObjects: {}
