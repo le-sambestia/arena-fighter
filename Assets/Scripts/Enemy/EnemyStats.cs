@@ -6,8 +6,7 @@ public class EnemyStats : CharacterStats
 {
     public override void Die()
     {
-        base.Die();
-
+        currentHealth = 0;
         Destroy(gameObject);
     }
 }
