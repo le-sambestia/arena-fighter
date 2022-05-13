@@ -14,6 +14,7 @@ public class SceneChange : MonoBehaviour
 
     Scene currentArena;
     public int randomArena;
+    EnemyCoun enemyCount;
     public SceneList[] difficulty = new SceneList[] { };
     [System.Serializable]
     public struct SceneList
@@ -22,11 +23,7 @@ public class SceneChange : MonoBehaviour
     }
     private void Start()
     {
-        currentDifficulty = 0;
-        randomArena = Random.Range(0, difficulty[currentDifficulty].arenas.Count - 1);
-        currentArena = SceneManager.GetSceneByBuildIndex(difficulty[currentDifficulty].arenas[randomArena]);
-        SceneManager.LoadScene(difficulty[currentDifficulty].arenas[randomArena], LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));
+        StartCoroutine(LoadScene());
     }
     private void Update()
     {
@@ -43,12 +40,19 @@ public class SceneChange : MonoBehaviour
             {
                 LoadNextDifficulty();
             }
-            randomArena = Random.Range(0, difficulty[currentDifficulty].arenas.Count - 1);
-            currentArena = SceneManager.GetSceneByBuildIndex(difficulty[currentDifficulty].arenas[randomArena]);
-            SceneManager.LoadScene(difficulty[currentDifficulty].arenas[randomArena], LoadSceneMode.Additive);
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));
-            
+            StartCoroutine(LoadScene());
         }
+    }
+    public IEnumerator LoadScene()
+    {
+        currentDifficulty = 0;
+        randomArena = Random.Range(0, difficulty[currentDifficulty].arenas.Count - 1);
+        currentArena = SceneManager.GetSceneByBuildIndex(difficulty[currentDifficulty].arenas[randomArena]);
+        SceneManager.LoadScene(difficulty[currentDifficulty].arenas[randomArena], LoadSceneMode.Additive);
+        enemyCount = gameObject.GetComponent<EnemyCoun>();
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("MainScene"));   
+        yield return new WaitForSeconds(1);
+        enemyCount.FindEnemies();
     }
     //public void BossSwitchScene()
     //{

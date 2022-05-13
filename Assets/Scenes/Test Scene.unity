@@ -8989,6 +8989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 1927996938348772258, guid: f8ef9ab24ca7f3d409f437847999aabd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ef9ab24ca7f3d409f437847999aabd, type: 3}
 --- !u!1 &1924634703

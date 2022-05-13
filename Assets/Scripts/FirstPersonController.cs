@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class FirstPersonController : MonoBehaviour
 {
     public GameObject Player;
+    Animator animator;
+    public Animator panelAnimator;
     public bool CanMove { get; private set; } = true;
     public bool isSprinting => canSprint && Input.GetKey(sprintKey);
     public bool shouldJump => characterController.isGrounded && Input.GetKeyDown(jumpKey);
@@ -165,6 +167,7 @@ public class FirstPersonController : MonoBehaviour
         currentStamina = maxStamina;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -456,6 +459,7 @@ public class FirstPersonController : MonoBehaviour
 
     public void KillPlayer()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        panelAnimator.SetBool("isDead", true);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
