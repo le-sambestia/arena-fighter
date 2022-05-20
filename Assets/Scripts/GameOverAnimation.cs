@@ -17,5 +17,8 @@ public class GameOverAnimation : MonoBehaviour
     public void AnimationOver()
     {
         animator.SetBool("isDead", false);
+        gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

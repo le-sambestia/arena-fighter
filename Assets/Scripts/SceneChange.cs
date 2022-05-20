@@ -73,6 +73,10 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void QuitGame()
     {
         Application.Quit();

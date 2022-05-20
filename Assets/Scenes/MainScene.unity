@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.45035082, g: 0.50036967, b: 0.5752834, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,7 +260,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32459914}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -1080,7 +1080,7 @@ GameObject:
   - component: {fileID: 325298841}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: Footsteps/Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2640,6 +2640,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies: 0
   EnemyList: []
+--- !u!114 &521561409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521561406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b903f4d7a611bd4f847859b0866387b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &521561411
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4749,7 +4761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1072104716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5026,9 +5038,65 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: useFootsteps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
       propertyPath: panelAnimator
       value: 
       objectReference: {fileID: 839099743}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: woodClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: grassClips.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: woodClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e9eaa5116746e2f4285cfcb966b76bbe, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: woodClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f1be7ef0878ad2c459e597cf94e62035, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: woodClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: cfefcc79ba26bf1498339abe91004f96, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: woodClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: fa377798f4e084e4f92e153609816c2a, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: grassClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 53754b44ec8db654095380c4c51ac825, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: grassClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 31e78f90a31828d459cf873be0d6f3ad, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: grassClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d7d0bd8f31e3fe84f8f18261177fe7d5, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: grassClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: efd05db95da56404e92d2ca34ed2481b, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: grassClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2433a7502f45865439e15b72a9d89c69, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: grassClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 50c77cb32f68f2741941fa1fc9276e43, type: 3}
+    - target: {fileID: 3104626151445828014, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
+      propertyPath: grassClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 98d48416994ed2b45b83307a3a8813bf, type: 3}
     - target: {fileID: 3104626151445828015, guid: 1f63df2cece6ea045ba68257d2abd651, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6062,8 +6130,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 521561407}
-        m_TargetAssemblyTypeName: NewWaveSpawn, Assembly-CSharp
+      - m_Target: {fileID: 521561409}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
@@ -6142,7 +6210,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16772
+  m_Name: pb_Mesh16792
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7153,7 +7221,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1777504587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 521561409}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1777504587
 MonoBehaviour:
   m_ObjectHideFlags: 0
