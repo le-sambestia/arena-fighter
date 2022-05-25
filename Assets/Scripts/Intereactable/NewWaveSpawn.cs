@@ -58,7 +58,7 @@ public class NewWaveSpawn : Interactable
         difficulty[currentDifficulty].arenas.RemoveAt(randomArena);
         if (difficulty[currentDifficulty].arenas.Count == 0)
         {
-            LoadNextDifficulty();
+            if (LoadNextDifficulty()) return;
         }
         StartCoroutine(LoadScene());
     }
@@ -85,7 +85,7 @@ public class NewWaveSpawn : Interactable
     //    room.SetActive(true);
     //}
 
-    public void LoadNextDifficulty()
+    public bool LoadNextDifficulty()
     {
         if (currentDifficulty < 2)
         {
@@ -94,7 +94,9 @@ public class NewWaveSpawn : Interactable
         else if (currentDifficulty == 2)
         {
             SceneManager.LoadScene("WinScreen");
+            return true;
         }
+        return false;
         //roomcontroller.instance.currentworldname = currentDifficulty.();
         //scenemanager.loadscene(roomcontroller.instance.currentworldname + "main");
     }
