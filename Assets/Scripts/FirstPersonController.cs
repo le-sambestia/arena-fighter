@@ -460,6 +460,6 @@ public class FirstPersonController : MonoBehaviour
     public void KillPlayer()
     {
         panelAnimator.SetBool("isDead", true);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Destroy(this);
     }
 }

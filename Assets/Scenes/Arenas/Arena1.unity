@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 865170120}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Footsteps/Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 40
@@ -4821,7 +4821,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28012
+  m_Name: pb_Mesh44384
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

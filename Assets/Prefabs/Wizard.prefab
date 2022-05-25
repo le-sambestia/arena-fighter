@@ -133,7 +133,7 @@ MonoBehaviour:
   damage:
     baseValue: 10
   attackSpeed:
-    baseValue: 1
+    baseValue: 0.9
   armour:
     baseValue: 0
   maxHP: 100
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ade5be9c8408d147aa51666335b7778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: 0.6
+  attackDelay: 1
 --- !u!114 &1767195290656245922
 MonoBehaviour:
   m_ObjectHideFlags: 0

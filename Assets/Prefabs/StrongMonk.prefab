@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1767195290656245921}
   - component: {fileID: 1767195290656245922}
   m_Layer: 0
-  m_Name: Monk
+  m_Name: StrongMonk
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,9 +137,9 @@ MonoBehaviour:
   armour:
     baseValue: 0
   maxHP: 125
-  timeBeforeRegenStarts: 0
-  healthValueIncrement: 0
-  healthTimeIncrement: 0
+  timeBeforeRegenStarts: 5
+  healthValueIncrement: 0.5
+  healthTimeIncrement: 1
 --- !u!114 &1767195290656245921
 MonoBehaviour:
   m_ObjectHideFlags: 0

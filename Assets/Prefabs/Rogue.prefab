@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage:
-    baseValue: 10
+    baseValue: 5
   attackSpeed:
     baseValue: 1
   armour:
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ade5be9c8408d147aa51666335b7778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: 0.6
+  attackDelay: 0.4
 --- !u!114 &1767195290656245922
 MonoBehaviour:
   m_ObjectHideFlags: 0

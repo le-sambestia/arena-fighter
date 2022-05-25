@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class NewWaveSpawn : Interactable
 {
+    int arenasPassed;
     public override void OnFocus()
     {
         Debug.Log("Looking at " + gameObject.name);
@@ -13,8 +14,9 @@ public class NewWaveSpawn : Interactable
 
     public override void OnInterect()
     {
-        if(enemyCount.EnemyList.Count ==0)
+        if (enemyCount.EnemyList.Count == 0)
         {
+            arenasPassed += 1;
             SwitchScene();
         }
         else
@@ -47,6 +49,7 @@ public class NewWaveSpawn : Interactable
     }
     private void Start()
     {
+        currentDifficulty = 0;
         StartCoroutine(LoadScene());
     }
     public void SwitchScene()
@@ -61,7 +64,6 @@ public class NewWaveSpawn : Interactable
     }
     public IEnumerator LoadScene()
     {
-        currentDifficulty = 0;
         randomArena = Random.Range(0, difficulty[currentDifficulty].arenas.Count - 1);
         currentArena = SceneManager.GetSceneByBuildIndex(difficulty[currentDifficulty].arenas[randomArena]);
         SceneManager.LoadScene(difficulty[currentDifficulty].arenas[randomArena], LoadSceneMode.Additive);
@@ -85,7 +87,14 @@ public class NewWaveSpawn : Interactable
 
     public void LoadNextDifficulty()
     {
-        currentDifficulty += 1;
+        if (currentDifficulty < 2)
+        {
+            currentDifficulty += 1;
+        }
+        else if (currentDifficulty == 2)
+        {
+            SceneManager.LoadScene("WinScreen");
+        }
         //roomcontroller.instance.currentworldname = currentDifficulty.();
         //scenemanager.loadscene(roomcontroller.instance.currentworldname + "main");
     }
