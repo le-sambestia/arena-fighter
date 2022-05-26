@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class NewWaveSpawn : Interactable
 {
-    int arenasPassed;
+    int arenasPassed = 0;
     public override void OnFocus()
     {
         Debug.Log("Looking at " + gameObject.name);
@@ -56,6 +56,7 @@ public class NewWaveSpawn : Interactable
     {
         SceneManager.UnloadSceneAsync(difficulty[currentDifficulty].arenas[randomArena]);
         difficulty[currentDifficulty].arenas.RemoveAt(randomArena);
+        arenasPassed++;
         if (difficulty[currentDifficulty].arenas.Count == 0)
         {
             if (LoadNextDifficulty()) return;

@@ -140,6 +140,7 @@ MonoBehaviour:
   timeBeforeRegenStarts: 5
   healthValueIncrement: 1
   healthTimeIncrement: 1
+  magicTable: {fileID: 0}
 --- !u!114 &1767195290656245921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cleric
       objectReference: {fileID: 0}
+    - target: {fileID: 4618976667511629202, guid: f1f496dad8b2bbb4ebd3985f3255d3a5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cb274c57cf290d948bf72cb4fa63cb59, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1f496dad8b2bbb4ebd3985f3255d3a5, type: 3}
 --- !u!4 &167887066222947639 stripped

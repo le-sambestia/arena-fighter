@@ -15,15 +15,15 @@ public class FirstPersonController : MonoBehaviour
     public bool shouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnimation && characterController.isGrounded;
 
     [Header("Optional")]
-    [SerializeField] private bool canSprint = true;
-    [SerializeField] private bool canJump = true;
-    [SerializeField] private bool canCrouch = true;
-    [SerializeField] private bool canUseHeadbob = true;
-    [SerializeField] private bool willSlideOnSlope = true;
-    [SerializeField] private bool canZoom = true;
-    [SerializeField] private bool canInteract = true;
-    [SerializeField] private bool useFootsteps = true;
-    [SerializeField] private bool useStamina = true;
+    [SerializeField] public bool canSprint = true;
+    [SerializeField] public bool canJump = true;
+    [SerializeField] public bool canCrouch = true;
+    [SerializeField] public bool canUseHeadbob = true;
+    [SerializeField] public bool willSlideOnSlope = true;
+    [SerializeField] public bool canZoom = true;
+    [SerializeField] public bool canInteract = true;
+    [SerializeField] public bool useFootsteps = true;
+    [SerializeField] public bool useStamina = true;
 
     [Header("Controls")]
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
@@ -150,14 +150,7 @@ public class FirstPersonController : MonoBehaviour
     //}
     void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
         DontDestroyOnLoad(instance);
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
@@ -171,6 +164,20 @@ public class FirstPersonController : MonoBehaviour
     }
     void Update()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "MainMenu")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Destroy(gameObject);
+        }
+        else if (sceneName == "WinScreen")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Destroy(gameObject);
+        }
         if (CanMove)
         {
             HandleMovementInput();
@@ -191,7 +198,7 @@ public class FirstPersonController : MonoBehaviour
             if (useFootsteps)
                 HandleFootsteps();
 
-            if(canInteract)
+            if (canInteract)
             {
                 HandleInteractionCheck();
                 HandleInteractionInput();
@@ -266,9 +273,9 @@ public class FirstPersonController : MonoBehaviour
     }
     private void HandleZoom()
     {
-        if(Input.GetKeyDown(zoomKey))
+        if (Input.GetKeyDown(zoomKey))
         {
-            if(zoomRoutine != null)
+            if (zoomRoutine != null)
             {
                 StopCoroutine(zoomRoutine);
                 zoomRoutine = null;
@@ -290,17 +297,17 @@ public class FirstPersonController : MonoBehaviour
     }
     private void HandleInteractionCheck()
     {
-        if(Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
+        if (Physics.Raycast(playerCamera.ViewportPointToRay(interactionRayPoint), out RaycastHit hit, interactionDistance))
         {
-            if(hit.collider.gameObject.layer == 9 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
+            if (hit.collider.gameObject.layer == 9 && (currentInteractable == null || hit.collider.gameObject.GetInstanceID() != currentInteractable.GetInstanceID()))
             {
                 hit.collider.TryGetComponent<Interactable>(out currentInteractable);
 
-                if(currentInteractable)
-                   currentInteractable.OnFocus();
+                if (currentInteractable)
+                    currentInteractable.OnFocus();
             }
         }
-        else if(currentInteractable)
+        else if (currentInteractable)
         {
             currentInteractable.OnLoseFocus();
             currentInteractable = null;
@@ -320,14 +327,13 @@ public class FirstPersonController : MonoBehaviour
 
         footstepTimer -= Time.deltaTime;
 
-        if(footstepTimer <= 0)
+        if (footstepTimer <= 0)
         {
-            if(Physics.Raycast(playerCamera.transform.position, Vector3.down, out RaycastHit hit, 3))
+            if (Physics.Raycast(playerCamera.transform.position, Vector3.down, out RaycastHit hit, 3))
             {
-                switch(hit.collider.tag)
+                switch (hit.collider.tag)
                 {
                     case "Footsteps/Wood":
-                    default:
                         footstepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);
                         break;
                     case "Footsteps/Metal":
