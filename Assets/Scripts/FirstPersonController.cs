@@ -150,8 +150,15 @@ public class FirstPersonController : MonoBehaviour
     //}
     void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(instance);
+        if(instance != null)
+        {
+            Destroy(gameObject);        
+        }
+        else if (instance == null)
+        {
+            instance = this;
+        }
+        //DontDestroyOnLoad(instance);
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
         defaultYpos = playerCamera.transform.localPosition.y;
